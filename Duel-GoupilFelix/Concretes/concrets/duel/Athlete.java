@@ -20,7 +20,7 @@ public class Athlete implements IAthlete{
 	
 	public Athlete (Statistiques statistiques) 
 	{
-		
+		setStatistiques(statistiques);
 	}
 	@Override
 	public void Verify(Statistiques statistiques) {
@@ -32,6 +32,12 @@ public class Athlete implements IAthlete{
 		
 		return CombatantEnum.Athlète;
 	}
-
+	public void setStatistiques(Statistiques statistiques) 
+	{
+		this.Force = statistiques.Force;
+		this.Dexterite = statistiques.Dexterite;
+		this.Intelligence = statistiques.Intelligence;
+		this.Concentration = statistiques.Concentration;
+	}
 
 }

@@ -6,7 +6,6 @@ import java.util.List;
 import abstracts.duel.ICapacite;
 import abstracts.duel.ICombatant;
 import abstracts.duel.IMagicien;
-import abstracts.duel.ICombatant.CombatantEnum;
 import exceptions.duel.ConcentrationTooLowException;
 import exceptions.duel.IntelligenceTooLowException;
 
@@ -24,7 +23,7 @@ public class Magicien implements IMagicien{
 	
 	public Magicien (Statistiques statistiques) 
 	{
-		
+		setStatistiques(statistiques);
 	}
 
 	@Override
@@ -52,6 +51,13 @@ public class Magicien implements IMagicien{
 	public CombatantEnum GetStrategie() {
 		
 		return CombatantEnum.Magicien;
+	}
+	public void setStatistiques(Statistiques statistiques) 
+	{
+		this.Force = statistiques.Force;
+		this.Dexterite = statistiques.Dexterite;
+		this.Intelligence = statistiques.Intelligence;
+		this.Concentration = statistiques.Concentration;
 	}
 	
 

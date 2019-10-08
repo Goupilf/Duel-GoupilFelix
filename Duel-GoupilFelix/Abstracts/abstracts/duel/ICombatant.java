@@ -31,4 +31,6 @@ public enum CombatantEnum
 		}
 		return plusGrand;
 	}
+	public void setStatistiques(Statistiques statistiques);
+	
 }

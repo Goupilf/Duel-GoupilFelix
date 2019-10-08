@@ -21,7 +21,7 @@ public class Guerrier implements IGuerrier{
 	
 	public Guerrier (Statistiques statistiques) 
 	{
-		
+		setStatistiques(statistiques);
 	}
 	@Override
 	public void Verify(Statistiques statistiques) {
@@ -32,6 +32,13 @@ public class Guerrier implements IGuerrier{
 	public CombatantEnum GetStrategie() {
 		
 		return CombatantEnum.Guerrier;
+	}
+	public void setStatistiques(Statistiques statistiques) 
+	{
+		this.Force = statistiques.Force;
+		this.Dexterite = statistiques.Dexterite;
+		this.Intelligence = statistiques.Intelligence;
+		this.Concentration = statistiques.Concentration;
 	}
 
 	
