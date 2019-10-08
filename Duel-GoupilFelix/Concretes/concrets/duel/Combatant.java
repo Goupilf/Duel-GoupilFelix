@@ -26,7 +26,6 @@ public class Combatant implements ICombatant{
 	public Combatant(Statistiques statistiques)
 	{
 		VerifyGeneral(statistiques);
-		//setStrategie(strategie);
 		Verify(statistiques);
 		setStatistiques(statistiques);
 		

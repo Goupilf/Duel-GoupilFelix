@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import abstracts.duel.ICapacite;
+import abstracts.duel.ICombatant;
 import abstracts.duel.IGuerrier;
+import exceptions.duel.InvalidStatistiquesException;
 
 
 public class Guerrier implements IGuerrier{
@@ -21,10 +23,13 @@ public class Guerrier implements IGuerrier{
 	
 	public Guerrier (Statistiques statistiques) 
 	{
+		ICombatant.VerifyGeneral(statistiques);
+		Verify(statistiques);
 		setStatistiques(statistiques);
 	}
 	@Override
 	public void Verify(Statistiques statistiques) {
+		if(statistiques.Force < statistiques.Dexterite +10 || statistiques.Dexterite + 10 < statistiques.Intelligence + 10|| statistiques.Intelligence +10 < statistiques.Concentration) throw new InvalidStatistiquesException();
 		
 	}
 

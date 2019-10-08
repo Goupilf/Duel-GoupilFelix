@@ -5,6 +5,8 @@ import java.util.List;
 
 import abstracts.duel.IAthlete;
 import abstracts.duel.ICapacite;
+import abstracts.duel.ICombatant;
+import exceptions.duel.InvalidStatistiquesException;
 
 public class Athlete implements IAthlete{
 
@@ -20,10 +22,13 @@ public class Athlete implements IAthlete{
 	
 	public Athlete (Statistiques statistiques) 
 	{
+		ICombatant.VerifyGeneral(statistiques);
+		Verify(statistiques);
 		setStatistiques(statistiques);
 	}
 	@Override
 	public void Verify(Statistiques statistiques) {
+		if(statistiques.Force < 20 || statistiques.Dexterite <20 || statistiques.Intelligence <20 || statistiques.Concentration <20)throw new InvalidStatistiquesException();
 		
 	}
 

@@ -23,6 +23,8 @@ public class Magicien implements IMagicien{
 	
 	public Magicien (Statistiques statistiques) 
 	{
+		ICombatant.VerifyGeneral(statistiques);
+		Verify(statistiques);
 		setStatistiques(statistiques);
 	}
 
