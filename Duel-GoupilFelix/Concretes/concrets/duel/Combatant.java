@@ -11,13 +11,13 @@ import exceptions.duel.StatsTooHighException;
 
 
 public class Combatant implements ICombatant{
-	public final int NOMBRE_DE_VIE_DE_BASE=200;
+	public final int NOMBRE_DE_VIE_DE_BASE=200;//MS Une constante doit être static final.
 	public int Force;
-	public int Dexterite;
+	public int Dexterite;//MS Nomenclature java : propriétés en camelCase.
 	public int Intelligence;
-	public int Concentration;
+	public int Concentration;//MS POO1: On ne doit JAMAIS mettre une propriété public!
 	public int Vie = NOMBRE_DE_VIE_DE_BASE - (Force+Dexterite+Intelligence+Concentration);
-	public Statistiques stats;
+	public Statistiques stats;//MS Propriété stats jamais initialisée.
 	public CombatantEnum strategie;
 	public List<ICapacite> list = new ArrayList<ICapacite>();
 	
@@ -41,7 +41,7 @@ public class Combatant implements ICombatant{
 		return this.strategie;
 	}
 	
-	public void setStatistiques(Statistiques statistiques) 
+	public void setStatistiques(Statistiques statistiques) //MS Pourquoi on utilise un objet statistiques pour finalement tout remettre dans les propriétés du combattant?
 	{
 		this.Force = statistiques.Force;
 		this.Dexterite = statistiques.Dexterite;

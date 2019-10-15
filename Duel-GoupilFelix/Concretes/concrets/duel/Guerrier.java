@@ -9,7 +9,7 @@ import abstracts.duel.IGuerrier;
 import exceptions.duel.InvalidStatistiquesException;
 
 
-public class Guerrier implements IGuerrier{
+public class Guerrier implements IGuerrier{//MS Guerrier, Athlete et Magicien doivent hériter de Combattant pour ne pas répéter le code commun.
 
 	public final int NOMBRE_DE_VIE_DE_BASE=200;
 	public int Force;
@@ -28,13 +28,13 @@ public class Guerrier implements IGuerrier{
 		setStatistiques(statistiques);
 	}
 	@Override
-	public void Verify(Statistiques statistiques) {
+	public void Verify(Statistiques statistiques) {//MS Nomenclature Java : méthodes en camelCase.
 		if(statistiques.Force < statistiques.Dexterite +10 || statistiques.Dexterite + 10 < statistiques.Intelligence + 10|| statistiques.Intelligence +10 < statistiques.Concentration) throw new InvalidStatistiquesException();
 		
 	}
 
 	@Override
-	public CombatantEnum GetStrategie() {
+	public CombatantEnum GetStrategie() {//MS Ce n'est pas ici qu'on doit mettre en place une stratégie, c'est dans le calcul de la puissance des capacités.
 		
 		return CombatantEnum.Guerrier;
 	}
